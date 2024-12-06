@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Sube tus fotos y obtén descuentos!</title>
+    <link rel="icon" href="imag/logo.jpeg" type="image/png">
+    <link rel="icon" href="imag/logo.jpeg" sizes="32x32" type="image/png">
+    <link rel="icon" href="imag/logo.jpeg" sizes="16x16" type="image/png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-top: 15px;
+            color: #ffc107;
+        }
+
+        .back-to-top {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-to-top:hover {
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 2.5rem;
+            color: #ff512f;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .file-input {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: #555;
+            background: #f9f9f9;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            width: 70%;
+            transition: border-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .file-input:hover {
+            border-color: #ff512f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #222;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: 200px;
+            margin: 0 15px;
+            border-radius: 10px;
+        }
+
+        .image-gallery .text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-to-top">Volver a Inicio</a>
+        <h1>¡Sube tus fotos y obtén descuentos!</h1>
+        <p>Disfruta y comparte momentos únicos en familia</p>
+    </header>
+
+    <div class="container">
+        <h2><i class="fas fa-camera"></i> Comparte tu experiencia</h2>
+        <p>Sube las imágenes de tus platillos y momentos familiares para recibir descuentos exclusivos. ¡Es fácil y rápido!
+            En App Inventor o desde tu dispositivo
+        </p>
+
+        <div class="image-gallery">
+            <div>
+                <img src="imag/pancakes-2291908_1280.jpg" alt="Imagen 1">
+                <div class="text">Tutorial </div>
+            </div>
+            <div>
+                <img src="imag/empanadas-1117284_1280.jpg" alt="Imagen 2">
+                <div class="text">https://www.youtube.com/shorts/GOI-wHmkYAs</div>
+            </div>
+        </div>
+
+        <a href="https://gallery.appinventor.mit.edu/?galleryid=933cab26-0323-4cc2-a246-2158eb83b7d4" class="button">
+            Descargar nuestra App
+        </a>
+
+        <form>
+            <input type="file" class="file-input" accept="image/*" multiple>
+            <button type="submit">Subir Fotos</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 GILFOOD | <a href="#">Política de privacidad</a></p>
+    </footer>
+</body>
+</html>
+

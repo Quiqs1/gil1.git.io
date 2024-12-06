@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente Virtual - GILFOOD</title>
+  <link rel="icon" href="imag/logo.jpeg" type="image/png">
+    <link rel="icon" href="imag/logo.jpeg" sizes="32x32" type="image/png">
+    <link rel="icon" href="imag/logo.jpeg" sizes="16x16" type="image/png">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      height: 80vh;
+      margin-top: 20px;
+    }
+
+    /* Contenedor de preguntas frecuentes */
+    #faq-container {
+      width: 30%;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-right: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #faq-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #e1e1e1;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .faq-item:hover {
+      background-color: #c7c7c7;
+    }
+
+    .faq-item span {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Contenedor del chat */
+    #chat-container {
+      width: 60%;
+      height: 100%;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #chat-box {
+      flex: 1;
+      padding: 10px;
+      overflow-y: scroll;
+      background-color: #f9f9f9;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 10px;
+      background-color: #e1e1e1;
+      max-width: 80%;
+    }
+
+    .message-user {
+      background-color: #68b3f7;
+      margin-left: auto;
+    }
+
+    .message-bot {
+      background-color: #f1f1f1;
+    }
+
+    #input-box {
+      padding: 10px;
+      display: flex;
+    }
+
+    #input-box input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #send-btn {
+      background-color: #68b3f7;
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    #send-btn:hover {
+      background-color: #3c8ec2;
+    }
+
+    /* Botones en la parte del chat */
+    #buttons-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      padding: 10px;
+    }
+
+    .action-btn {
+      padding: 10px 20px;
+      background-color: #68b3f7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .action-btn:hover {
+      background-color: #3c8ec2;
+    }
+
+    /* Diseño de imagen */
+    #faq-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Preguntas Frecuentes -->
+    <div id="faq-container">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-item" onclick="askQuestion('reserva')">
+        <span>¿Cómo puedo hacer una reserva?</span>
+      </div>
+      <div class="faq-item" onclick="askQuestion('comida')">
+        <span>¿Ofrecen comida para llevar?</span>
+      </div>
+      <div class="faq-item" onclick="askQuestion('vegetariano')">
+        <span>¿Tienen opciones vegetarianas?</span>
+      </div>
+      <div class="faq-item" onclick="askQuestion('domicilio')">
+        <span>¿Puedo pedir comida a domicilio?</span>
+      </div>
+      <div class="faq-item" onclick="askQuestion('horarios')">
+        <span>¿Cuáles son los horarios de atención?</span>
+      </div>
+      <img src="imag/mas.webp" alt="Imagen del restaurante">
+    </div>
+
+    <!-- Chat del asistente virtual -->
+    <div id="chat-container">
+      <div id="chat-box">
+        <!-- Mensajes del chat -->
+      </div>
+      <div id="input-box">
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+        <button id="send-btn">Enviar</button>
+      </div>
+
+      <!-- Botones de acción -->
+      <div id="buttons-container">
+        <button class="action-btn" onclick="goToHome()">Regresar al inicio</button>
+        <button class="action-btn" onclick="goToMenu()">Ver menú</button>
+        <button class="action-btn" onclick="goToReservation()">Reservas</button>
+        <button class="action-btn" onclick="closeChat()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para redirigir a la página de inicio
+    function goToHome() {
+      window.location.href = "index.html";  // Cambia esta URL a la de tu página de inicio
+    }
+
+    // Función para redirigir a la página del menú
+    function goToMenu() {
+      window.location.href = "indux.html";  // Cambia esta URL a la de tu página de menú
+    }
+
+    // Función para redirigir a la página de reservas
+    function goToReservation() {
+      window.location.href = "comprar.html";  // Cambia esta URL a la de tu página de reservas
+    }
+
+    // Función para mostrar preguntas frecuentes al hacer clic
+    function askQuestion(question) {
+      let response = "";
+
+      if (question === 'reserva') {
+        response = "Para hacer una reserva, puedes llamarnos o hacerlo en nuestra página web. CLIC EN RESERVAS";
+      } else if (question === 'comida') {
+        response = "Contamos con una variedad de platos, ¿te gustaría ver el menú completo? CLIC EN MENU";
+      } else if (question === 'vegetariano') {
+        response = "Sí, tenemos opciones vegetarianas. ¿Te gustaría conocer más sobre esos platos? CLICK MENU";
+      } else if (question === 'domicilio') {
+        response = "Sí, puedes pedir a domicilio a través de plataformas como UberEats y Rappi.";
+      } else if (question === 'horarios') {
+        response = "Nuestro horario de atención es de lunes a domingo de 9:00 PM a 9:00 PM.";
+      } else {
+        response = "Lo siento, no entiendo esa pregunta. Contacte a este número: 123-456-7890.";
+      }
+
+      appendMessage(response, 'bot');
+    }
+
+    // Función para agregar mensajes al chat
+    function appendMessage(message, sender) {
+      const chatBox = document.getElementById('chat-box');
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.classList.add(sender === 'user' ? 'message-user' : 'message-bot');
+      messageDiv.textContent = message;
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight; // Desplazar hacia abajo
+    }
+
+    // Función de envío del mensaje
+    function sendMessage() {
+      const userInput = document.getElementById('user-input').value;
+      if (userInput.trim()) {
+        appendMessage(userInput, 'user');  // Agregar mensaje del usuario
+        document.getElementById('user-input').value = ''; // Limpiar el campo de texto
+        
+        // Respuesta del bot después de un pequeño retraso
+        setTimeout(() => {
+          const botMessage = botResponse(userInput);
+          appendMessage(botMessage, 'bot');
+        }, 1000);
+      }
+    }
+
+    // Función para determinar la respuesta del bot
+    function botResponse(input) {
+      const keywords = [
+        { word: 'reserva', response: "Puedes hacer una reserva llamándonos o a través de nuestra página web." },
+        { word: 'comida', response: "Tenemos una variedad de platos. ¿Te gustaría ver el menú?" },
+        { word: 'vegetariano', response: "Sí, tenemos opciones vegetarianas. ¿Quieres saber más?" },
+        { word: 'domicilio', response: "Puedes pedir a domicilio a través de plataformas como UberEats." },
+        { word: 'horarios', response: "Nuestro horario es de 12:00 PM a 10:00 PM." },
+      ];
+
+      for (const item of keywords) {
+        if (input.includes(item.word)) {
+          return item.response;
+        }
+      }
+
+      return "Lo siento, no entiendo esa pregunta. Contacte a este número: 123-456-7890.";
+    }
+
+    // Evento de envío del mensaje
+    document.getElementById('send-btn').addEventListener('click', sendMessage);
+
+    // Evento para enviar al presionar Enter
+    document.getElementById('user-input').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    // Mensaje inicial
+    appendMessage("¡Hola! Soy el asistente virtual BETO. ¿En qué puedo ayudarte?", "bot");
+  </script>
+
+</body>
+</html>
+

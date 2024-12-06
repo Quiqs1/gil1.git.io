@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GILFOOD - Diseño Impactante</title>
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #1a1a1a, #000);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            flex-direction: column;
+            min-height: 100vh; 
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0 5px 10px rgba(255, 65, 108, 0.7);
+            margin-bottom: 20px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 5px 10px rgba(255, 65, 108, 0.7); }
+            100% { text-shadow: 0 10px 20px rgba(255, 65, 108, 1); }
+        }
+
+        p {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        
+        .neon-bg {
+            background: linear-gradient(-45deg, #0f0f0f, #ff416c, #00e6e6, #ff4b2b);
+            background-size: 400% 400%;
+            animation: bgAnimation 12s infinite;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Caja de Contenido */
+        .content-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00e6e6;
+            border-radius: 20px;
+            box-shadow: 0 0 30px #00e6e6, 0 0 60px #ff416c;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .payment-form input,
+        .payment-form select {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 10px;
+            border: 2px solid #00e6e6;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .payment-form input:focus,
+        .payment-form select:focus {
+            border-color: #ff416c;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .payment-form label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            text-align: left;
+            color: white;
+        }
+
+        
+        .pay-button {
+            padding: 15px;
+            font-size: 1.2rem;
+            color: white;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .pay-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 65, 108, 0.8), 0 5px 15px #ff4b2b;
+        }
+
+       
+        .super-cool-button {
+            position: relative;
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            overflow: hidden;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(255, 65, 108, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .super-cool-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 65, 108, 0.8), 0 5px 15px #ff4b2b;
+        }
+
+        .super-cool-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400%;
+            height: 400%;
+            background: radial-gradient(circle, #ff4b2b, transparent 50%);
+            transform: translate(-50%, -50%) scale(0);
+            z-index: -1;
+            opacity: 0.8;
+            transition: all 0.6s ease-out;
+        }
+
+        .super-cool-button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.2;
+        }
+
+        .super-cool-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #00e6e6, #ff416c, #ff4b2b);
+            background-size: 200%;
+            border-radius: 50px;
+            z-index: -2;
+            filter: blur(10px);
+            transition: all 0.6s ease-out;
+        }
+
+        .super-cool-button:hover::after {
+            background-position: 100%;
+            filter: blur(20px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="neon-bg"></div>
+
+    <h1>¡Bienvenido a GILFOOD!</h1>
+    <p>Comida del futuro, lista para hoy. 🍔🌟</p>
+
+    <div class="content-box">
+        <p>¡Gracias por visitarnos! Ingresa tus datos para completar el pago.</p>
+
+        <!-- Formulario de Pago -->
+        <div class="payment-form">
+            <label for="order">Selecciona tu pedido:</label>
+            <select id="order">
+                <option value="Platillo 1">- Platillo 1</option>
+                <option value="Platillo 2">- Platillo 2</option>
+                <option value="Platillo 3">- Platillo 3</option>
+            </select>
+
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" placeholder="Tu nombre" required>
+
+            <label for="card">Número de Tarjeta:</label>
+            <input type="text" id="card" placeholder="1234 5678 9012 3456" maxlength="16" required>
+
+            <label for="expiry">Fecha de Expiración:</label>
+            <input type="text" id="expiry" placeholder="MM/AA" maxlength="5" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+
+            <!-- Botón de Pagar -->
+            <button class="pay-button" onclick="processPayment()">Pagar Ahora</button>
+        </div>
+
+        <!-- Botón Regresar -->
+        <a href="index.html" class="super-cool-button">Regresar</a>
+    </div>
+
+    <script>
+        function processPayment() {
+            const name = document.getElementById('name').value;
+            const card = document.getElementById('card').value;
+            const expiry = document.getElementById('expiry').value;
+            const cvv = document.getElementById('cvv').value;
+
+            if (name && card && expiry && cvv) {
+                alert('¡Gracias por tu compra! Tu pago ha sido procesado.');
+            } else {
+                alert('Por favor, llena todos los campos para completar el pago.');
+            }
+        }
+    </script>
+</body>
+</html>
+

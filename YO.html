@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Gilfood</title>
+    <link rel="icon" href="imag/logo.jpeg" type="image/png">
+    <link rel="icon" href="imag/logo.jpeg" sizes="32x32" type="image/png">
+    <link rel="icon" href="imag/logo.jpeg" sizes="16x16" type="image/png">
+
+    <style>
+       
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        
+        header {
+            position: relative;
+            text-align: center;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ffdf00;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+            transform: scale(1.1);
+        }
+
+       
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 2.8rem;
+            color: #ff512f;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Carrusel de imágenes */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Botón ver más */
+        .btn {
+            background-color: #ff512f;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #dd2476;
+            transform: scale(1.1);
+        }
+
+        .more-content {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .more-content p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+       
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #222;
+            color: white;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ffdf00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header>
+        <a href="index.html" class="back-to-home">Volver al Inicio</a>
+        <h1>Bienvenidos a Gilfood</h1>
+        <p>Donde la comida se convierte en una experiencia inolvidable</p>
+    </header>
+
+
+    <div class="carousel-container">
+        <div class="carousel-images">
+            <img src="imag/logo.jpeg" alt="Plato 1">
+            <img src="imag/menugIL.webp" alt="Plato 2">
+            <img src="imag/cap.jpg" alt="Plato 3">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <h2>¿Quiénes somos en Gilfood?</h2>
+        <p>En Gilfood, nos apasiona ofrecer experiencias gastronómicas que no solo alimentan, sino que también unen a las familias, amigos y comunidades. Nuestro restaurante está diseñado para ofrecerte lo mejor de la comida tradicional y contemporánea, con un toque único que solo Gilfood puede ofrecer.</p>
+
+        <p>Queremos que cada plato sea una fiesta para tus sentidos, que cada bocado te haga sentir en casa, y que cada visita sea una celebración. Pero no solo nos importa la comida, también queremos que nuestros clientes se sientan parte de nuestra familia.</p>
+
+   
+        <button class="btn" onclick="toggleContent()">Ver más sobre nuestro objetivo</button>
+
+        
+        <div id="moreContent" class="more-content">
+            <p>En Gilfood, nos esforzamos por crear una comunidad gastronómica inclusiva, donde todos puedan disfrutar de la calidad y el sabor. Además, buscamos innovar constantemente, ofreciendo menús especiales, eventos exclusivos, y descuentos para nuestros clientes más fieles.</p>
+
+            <p>Queremos ser más que un restaurante, queremos ser un lugar donde las experiencias se construyan alrededor de la buena comida, la conversación y la convivencia. Tu satisfacción es nuestra prioridad, y estamos comprometidos a brindarte no solo un excelente servicio, sino también un espacio cómodo y acogedor.</p>
+
+            <p>¡Te invitamos a ser parte de esta aventura gastronómica! Ven a visitarnos y descubre lo que hace a Gilfood un lugar único. Aquí, cada plato es preparado con amor y pasión para brindarte la mejor experiencia posible.</p>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>© 2024 Gilfood | <a href="#">Política de privacidad</a></p>
+    </footer>
+
+    <script>
+      
+        function toggleContent() {
+            var content = document.getElementById("moreContent");
+            var button = document.querySelector(".btn");
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";  // Muestra el contenido
+                button.textContent = "Ver menos"; // Cambia el texto del botón
+            } else {
+                content.style.display = "none";  // Oculta el contenido
+                button.textContent = "Ver más sobre nuestro objetivo";  // Cambia el texto del botón
+            }
+        }
+
+        // Carrusel de imágenes
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-images img');
+        const totalImages = images.length;
+
+        document.getElementById('nextBtn').onclick = function() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            updateCarousel();
+        };
+
+        document.getElementById('prevBtn').onclick = function() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            updateCarousel();
+        };
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+
+</body>
+</html>
+
+
